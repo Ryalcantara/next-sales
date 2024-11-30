@@ -1,7 +1,6 @@
 import { SidebarTrigger } from "@/components/ui/sidebar";
-import { Clock, Power, Search } from "lucide-react";
 import { format } from "date-fns";
-
+import { Clock, Power, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import {
@@ -12,10 +11,9 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { CartItem, categories, Product, products } from "@/lib/data";
-
 import { Separator } from "@/components/ui/separator";
-import { useState } from "react";
 import Image from "next/image";
+import { useState } from "react";
 export default function POSBody() {
   const [cart, setCart] = useState<CartItem[]>([]);
   const [selectedCategory, setSelectedCategory] = useState("all");

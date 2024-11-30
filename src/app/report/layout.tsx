@@ -1,11 +1,7 @@
 import { AppSidebar } from "@/components/app-sidebar";
 import { SidebarInset, SidebarProvider } from "@/components/ui/sidebar";
 
-export default function ActivityLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function ReportLayout({ children }: { children: React.ReactNode }) {
   return (
     <SidebarProvider>
       <AppSidebar />

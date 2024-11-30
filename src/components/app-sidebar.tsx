@@ -1,8 +1,11 @@
 'use client'
 import * as React from "react"
 import {
+  Activity,
   BookOpen,
   Bot,
+  LayoutDashboard,
+  PhilippinePeso,
   Settings2,
   SquareTerminal,
 } from "lucide-react"
@@ -29,20 +32,20 @@ const data = {
     {
       title: "Point of Sales",
       url: "/pos",
-      icon: SquareTerminal,
+      icon: PhilippinePeso,
       isActive: true,
      
     },
     {
-      title: "Models",
-      url: "/",
-      icon: Bot,
+      title: "Activities",
+      url: "/activity",
+      icon: Activity,
      
     },
     {
-      title: "Documentation",
-      url: "#",
-      icon: BookOpen,
+      title: "Report",
+      url: "/report",
+      icon: LayoutDashboard,
     
     },
     {

@@ -13,12 +13,8 @@ export default function Page() {
 
 
   return (
-    <SidebarProvider>
-          <AppSidebar/>
-
-      <SidebarInset>
+    
         <POSBody/>
-      </SidebarInset>
-    </SidebarProvider>
+     
   );
 }
