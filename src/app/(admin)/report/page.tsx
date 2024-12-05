@@ -198,8 +198,8 @@ const Dashboard = () => {
           <StatsCard
             title="Total Sales Amount"
             value="12,650.00"
-            unit="USD"
-            change="+USD 1,543.30"
+            unit="PH"
+            change="+PH 1,543.30"
             percentage="12.2%"
             trend="up"
             icon={<DollarSign className="h-4 w-4" />}
@@ -225,8 +225,8 @@ const Dashboard = () => {
           <StatsCard
             title="Net Profit"
             value="12,650.00"
-            unit="USD"
-            change="+USD 3,792"
+            unit="PH"
+            change="+PH 3,792"
             percentage="0.3%"
             trend="up"
             icon={<TrendingUp className="h-4 w-4" />}
@@ -262,12 +262,12 @@ const Dashboard = () => {
               </div>
               <div className="mt-4 grid grid-cols-3 gap-4">
                 <div>
-                  <div className="text-2xl font-semibold">12,650.00 USD</div>
+                  <div className="text-2xl font-semibold">12,650.00 PH</div>
                   <div className="text-sm text-muted-foreground">Amount</div>
                 </div>
                 <div>
                   <div className="text-2xl font-semibold text-green-600">
-                    +1,543.30 USD
+                    +1,543.30 PH
                   </div>
                   <div className="text-sm text-muted-foreground">Growth</div>
                 </div>

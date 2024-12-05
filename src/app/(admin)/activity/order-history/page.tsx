@@ -76,7 +76,7 @@ const OrderManagement = () => {
                 <TableCell>{order.dateTime}</TableCell>
                 <TableCell>{order.customerName}</TableCell>
                 <TableCell>{order.orderStatus}</TableCell>
-                <TableCell>USD {order.totalPayment}</TableCell>
+                <TableCell>PH {order.totalPayment}</TableCell>
                 <TableCell>
                   <Badge
                     variant={

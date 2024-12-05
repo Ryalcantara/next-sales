@@ -2,12 +2,9 @@
 import * as React from "react"
 import {
   Activity,
-  BookOpen,
-  Bot,
   LayoutDashboard,
   PhilippinePeso,
   Settings2,
-  SquareTerminal,
 } from "lucide-react"
 
 import { NavMain } from "@/components/nav-main"
