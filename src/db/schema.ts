@@ -1,14 +1,28 @@
-import { createClient } from '@libsql/client';
-import { drizzle } from 'drizzle-orm/libsql';
-import { todos } from './schema';
+import { sql } from 'drizzle-orm';
+import { integer, sqliteTable, text } from 'drizzle-orm/sqlite-core';
 
-const tursoClient = createClient({
-  // For development, you can use local SQLite file
-  url: process.env.DATABASE_URL || 'file:local.db',
-  // Add auth token for production Turso database
-  authToken: process.env.DATABASE_AUTH_TOKEN,
-  // Enable sync for offline capability
-  syncUrl: process.env.DATABASE_SYNC_URL,
+export const usersTable = sqliteTable('users', {
+  id: integer('id').primaryKey(),
+  name: text('name').notNull(),
+  age: integer('age').notNull(),
+  email: text('email').unique().notNull(),
 });
 
-export const db = drizzle(tursoClient);
+export const postsTable = sqliteTable('posts', {
+  id: integer('id').primaryKey(),
+  title: text('title').notNull(),
+  content: text('content').notNull(),
+  userId: integer('user_id')
+    .notNull()
+    .references(() => usersTable.id, { onDelete: 'cascade' }),
+  createdAt: text('created_at')
+    .default(sql`(CURRENT_TIMESTAMP)`)
+    .notNull(),
+  updateAt: integer('updated_at', { mode: 'timestamp' }).$onUpdate(() => new Date()),
+});
+
+export type InsertUser = typeof usersTable.$inferInsert;
+export type SelectUser = typeof usersTable.$inferSelect;
+
+export type InsertPost = typeof postsTable.$inferInsert;
+export type SelectPost = typeof postsTable.$inferSelect;

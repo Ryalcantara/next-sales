@@ -1,8 +1,10 @@
-import { sqliteTable, text, integer } from 'drizzle-orm/sqlite-core';
+import { config } from 'dotenv';
+import { drizzle } from 'drizzle-orm/libsql';
+import * as schema from '@/db/schema'
 
-export const todos = sqliteTable('todos', {
-  id: integer('id').primaryKey(),
-  title: text('title').notNull(),
-  completed: integer('completed', { mode: 'boolean' }).notNull().default(false),
-  createdAt: integer('created_at', { mode: 'timestamp' }).notNull().default(sql`CURRENT_TIMESTAMP`),
-});
+config({ path: '.env' }); // or .env.local
+
+export const db = drizzle({ connection: {
+  url: process.env.TURSO_CONNECTION_URL!,
+  authToken: process.env.TURSO_AUTH_TOKEN!,
+}, schema});
