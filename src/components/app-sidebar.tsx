@@ -3,6 +3,7 @@ import * as React from "react"
 import {
   Activity,
   LayoutDashboard,
+  ListPlus,
   PhilippinePeso,
   Settings2,
 } from "lucide-react"
@@ -37,6 +38,12 @@ const data = {
       title: "Activities",
       url: "/activity",
       icon: Activity,
+     
+    },
+    {
+      title: "Miscellaneous",
+      url: "/miscellaneous",
+      icon: ListPlus,
      
     },
     {

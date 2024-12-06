@@ -8,6 +8,20 @@
       "when": 1733390021048,
       "tag": "0000_lowly_salo",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "6",
+      "when": 1733450706873,
+      "tag": "0001_naive_nehzno",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "6",
+      "when": 1733455304082,
+      "tag": "0002_dusty_fallen_one",
+      "breakpoints": true
     }
   ]
 }

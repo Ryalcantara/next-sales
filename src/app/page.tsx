@@ -1,8 +1,7 @@
 import { db } from "@/db";
 import Image from "next/image";
-
 export default async function Home() {
-   const posts = await db.query.postsTable.findMany()
+   const users = await db.query.usersTable.findMany();
 
   return (
     // <></>
@@ -28,8 +27,8 @@ export default async function Home() {
         </ol>
 
         <div className="flex gap-4 items-center flex-col sm:flex-row">
-        {posts.map((post, index) =>(
-          <div key={index}>{post.title}</div>
+        {users.map((user, index) =>(
+          <div key={index}>{user.name}</div>
         ))}
         </div>
       </main>
