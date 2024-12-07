@@ -10,9 +10,10 @@ import {
 import Misc from "../page";
 import { db } from "@/db";
 import AddProduct from "@/components/misc/inventory/add-product";
+import { productsTable } from "@/db/schema";
 
 export default async function InventoryMain() {
-  const products = await db.query.productsTable.findMany();
+  const products = await db.select().from(productsTable);
   return (
     <Misc>
       <div className="border w-full p-3">

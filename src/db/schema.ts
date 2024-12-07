@@ -1,30 +1,30 @@
 import { sql } from 'drizzle-orm';
-import { integer, real, sqliteTable, text } from 'drizzle-orm/sqlite-core';
+import { int, real, sqliteTable, text } from 'drizzle-orm/sqlite-core';
 
-export const usersTable = sqliteTable('users', {
-  id: integer('id').primaryKey(),
-  name: text('name').notNull(),
-  age: integer('age').notNull(),
-  email: text('email').unique().notNull(),
+export const usersTable = sqliteTable("users", {
+  id: int().primaryKey({ autoIncrement: true }),
+  name: text().notNull(),
+  age: int().notNull(),
+  email: text().notNull().unique(),
 });
 
 export const productsTable = sqliteTable('products', {
-  id: integer('id').primaryKey(),
+  id: int('id').primaryKey(),
   name: text('name').notNull(),
-  quantity: integer('quantity'),
+  quantity: int('quantity'),
   price: real('price').notNull(),
 })
 export const postsTable = sqliteTable('posts', {
-  id: integer('id').primaryKey(),
+  id: int('id').primaryKey(),
   title: text('title').notNull(),
   content: text('content').notNull(),
-  userId: integer('user_id')
+  userId: int('user_id')
     .notNull()
     .references(() => usersTable.id, { onDelete: 'cascade' }),
   createdAt: text('created_at')
     .default(sql`(CURRENT_TIMESTAMP)`)
     .notNull(),
-  updateAt: integer('updated_at', { mode: 'timestamp' }).$onUpdate(() => new Date()),
+  updateAt: int('updated_at', { mode: 'timestamp' }).$onUpdate(() => new Date()),
 });
 
 export type InsertUser = typeof usersTable.$inferInsert;

@@ -117,7 +117,7 @@ const SidebarProvider = React.forwardRef<
     
     // ! TAKE NOTE IN THIS LINE
     // const state = open ? "expanded" : "collapsed"
-    const state = open ? "expanded" : "collapsed"
+    const state =  "collapsed"
 
     const contextValue = React.useMemo<SidebarContext>(
       () => ({
