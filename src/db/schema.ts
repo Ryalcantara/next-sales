@@ -1,5 +1,5 @@
 import { sql } from 'drizzle-orm';
-import { int, real, sqliteTable, text } from 'drizzle-orm/sqlite-core';
+import { blob, int, real, sqliteTable, text } from 'drizzle-orm/sqlite-core';
 
 export const usersTable = sqliteTable("users", {
   id: int().primaryKey({ autoIncrement: true }),
@@ -13,6 +13,7 @@ export const productsTable = sqliteTable('products', {
   name: text('name').notNull(),
   quantity: int('quantity'),
   price: real('price').notNull(),
+  picture: blob('picture').notNull()
 })
 export const postsTable = sqliteTable('posts', {
   id: int('id').primaryKey(),
